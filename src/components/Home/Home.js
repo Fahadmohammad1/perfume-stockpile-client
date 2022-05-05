@@ -15,7 +15,7 @@ const Home = () => {
           </h1>
           <a
             href="/"
-            class="block bg-white hover:bg-gray-100 py-3 px-4 rounded-lg text-lg text-gray-800 font-bold uppercase mt-10"
+            class="block bg-white py-3 px-4 rounded-lg text-lg text-gray-800 font-bold uppercase mt-10 hover:bg-[#FACC15]"
           >
             Discover
           </a>

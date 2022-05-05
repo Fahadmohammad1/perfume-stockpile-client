@@ -4,68 +4,364 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="sticky top-0 z-10">
-      <header className="text-black bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <a href="/" className="mr-5 hover:text-white">
-              First Link
-            </a>
-            <a href="/" className="mr-5 hover:text-white">
-              Second Link
-            </a>
-            <a href="/" className="mr-5 hover:text-white">
-              Third Link
-            </a>
-            <a href="/" className="hover:text-white">
-              Fourth Link
-            </a>
-          </nav>
-          <a
-            href="/"
-            className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0"
+      <nav
+        class="
+  relative
+  w-full
+  flex flex-wrap
+  items-center
+  justify-between
+  py-4
+  bg-gray-100
+  text-gray-500
+  hover:text-gray-700
+  focus:text-gray-700
+  shadow-lg
+  navbar navbar-expand-lg navbar-light
+  "
+      >
+        <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+          <button
+            class="
+      navbar-toggler
+      text-gray-500
+      border-0
+      hover:shadow-none hover:no-underline
+      py-2
+      px-2.5
+      bg-transparent
+      focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+    "
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="bars"
+              class="w-6"
+              role="img"
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
-              viewBox="0 0 24 24"
+              viewBox="0 0 448 512"
             >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <path
+                fill="currentColor"
+                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+              ></path>
             </svg>
-            <span className="ml-3 text-xl xl:block  text-black">
-              Perfume House
-            </span>
-          </a>
-          <div className="lg:w-2/5 inline-flex lg:justify-end items-center ml-4 lg:ml-0">
-            <button className="gradient-btn inline-flex items-center  border-0 py-1 px-3  hover:bg-white rounded text-base mt-4 md:mt-0 text-white mr-3">
-              Button
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1 "
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-
-            <a href="/" className="block relative">
+          </button>
+          <div
+            class="collapse navbar-collapse flex-grow items-center"
+            id="navbarSupportedContent"
+          >
+            <a
+              class="
+        flex
+        items-center
+        text-gray-900
+        hover:text-gray-900
+        focus:text-gray-900
+        mt-2
+        lg:mt-0
+        mr-1
+      "
+              href="/"
+            >
               <img
-                alt="profil"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUW0u5Eiiy3oM6wcpeEE6sXCzlh8G-tX1_Iw&usqp=CAU"
-                className="mx-auto object-cover rounded-full h-10 w-10 "
+                src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
+                style={{ height: "15px" }}
+                alt=""
+                loading="lazy"
               />
             </a>
+            {/* <!-- Left links --> */}
+            <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                  href="/"
+                >
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                  href="/"
+                >
+                  Team
+                </a>
+              </li>
+              <li class="nav-item p-2">
+                <a
+                  class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                  href="/"
+                >
+                  Projects
+                </a>
+              </li>
+            </ul>
+            {/* <!-- Left links --> */}
           </div>
+          {/* <!-- Collapsible wrapper --> */}
+
+          {/* <!-- Right elements --> */}
+          <div class="flex items-center relative">
+            {/* <!-- Icon --> */}
+            <a
+              class="text-gray-500 hover:text-gray-700 focus:text-gray-700 mr-4"
+              href="/"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="shopping-cart"
+                class="w-4"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  fill="currentColor"
+                  d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"
+                ></path>
+              </svg>
+            </a>
+            <div class="dropdown relative">
+              <a
+                class="
+          text-gray-500
+          hover:text-gray-700
+          focus:text-gray-700
+          mr-4
+          dropdown-toggle
+          hidden-arrow
+          flex items-center
+        "
+                href="/"
+                id="dropdownMenuButton1"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="bell"
+                  class="w-4"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+                  ></path>
+                </svg>
+                <span class="text-white bg-red-700 absolute rounded-full text-xs -mt-2.5 ml-2 py-0 px-1.5">
+                  1
+                </span>
+              </a>
+              <ul
+                class="
+      dropdown-menu
+      min-w-max
+      absolute
+      hidden
+      bg-white
+      text-base
+      z-50
+      float-left
+      py-2
+      list-none
+      text-left
+      rounded-lg
+      shadow-lg
+      mt-1
+      m-0
+      bg-clip-padding
+      border-none
+      left-auto
+      right-0
+    "
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a
+                    class="
+          dropdown-item
+          text-sm
+          py-2
+          px-4
+          font-normal
+          block
+          w-full
+          whitespace-nowrap
+          bg-transparent
+          text-gray-700
+          hover:bg-gray-100
+        "
+                    href="/"
+                  >
+                    Action
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="
+          dropdown-item
+          text-sm
+          py-2
+          px-4
+          font-normal
+          block
+          w-full
+          whitespace-nowrap
+          bg-transparent
+          text-gray-700
+          hover:bg-gray-100
+        "
+                    href="/"
+                  >
+                    Another action
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="
+          dropdown-item
+          text-sm
+          py-2
+          px-4
+          font-normal
+          block
+          w-full
+          whitespace-nowrap
+          bg-transparent
+          text-gray-700
+          hover:bg-gray-100
+        "
+                    href="/"
+                  >
+                    Something else here
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown relative">
+              <a
+                class="dropdown-toggle flex items-center hidden-arrow"
+                href="/"
+                id="dropdownMenuButton2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                  class="rounded-full"
+                  style={{ height: "25px", width: "25px" }}
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+              <ul
+                class="
+    dropdown-menu
+    min-w-max
+    absolute
+    hidden
+    bg-white
+    text-base
+    z-50
+    float-left
+    py-2
+    list-none
+    text-left
+    rounded-lg
+    shadow-lg
+    mt-1
+    m-0
+    bg-clip-padding
+    border-none
+    left-auto
+    right-0
+  "
+                aria-labelledby="dropdownMenuButton2"
+              >
+                <li>
+                  <a
+                    class="
+        dropdown-item
+        text-sm
+        py-2
+        px-4
+        font-normal
+        block
+        w-full
+        whitespace-nowrap
+        bg-transparent
+        text-gray-700
+        hover:bg-gray-100
+      "
+                    href="/"
+                  >
+                    Action
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="
+        dropdown-item
+        text-sm
+        py-2
+        px-4
+        font-normal
+        block
+        w-full
+        whitespace-nowrap
+        bg-transparent
+        text-gray-700
+        hover:bg-gray-100
+      "
+                    href="/"
+                  >
+                    Another action
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="
+        dropdown-item
+        text-sm
+        py-2
+        px-4
+        font-normal
+        block
+        w-full
+        whitespace-nowrap
+        bg-transparent
+        text-gray-700
+        hover:bg-gray-100
+      "
+                    href="/"
+                  >
+                    Something else here
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {/* <!-- Right elements --> */}
         </div>
-      </header>
+      </nav>
     </div>
   );
 };
