@@ -1,9 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-  const navigate = useNavigate();
   return (
     <div className="sticky top-0 z-10">
       <nav
@@ -61,7 +60,8 @@ const Header = () => {
             className="collapse navbar-collapse flex-grow items-center"
             id="navbarSupportedContent"
           >
-            <div
+            <Link
+              to="/"
               className="
         flex
         items-center
@@ -74,7 +74,7 @@ const Header = () => {
       "
             >
               Perfume House
-            </div>
+            </Link>
             {/* <!-- Left links --> */}
             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
               <li className="nav-item p-2">
@@ -111,9 +111,11 @@ const Header = () => {
             {/* <!-- Icon --> */}
             <div className="dropdown relative">
               <div>
-                <button className="py-2 px-4 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
-                  LOGIN
-                </button>
+                <Link to="/login">
+                  <button className="py-2 px-4 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
+                    LOGIN
+                  </button>
+                </Link>
                 <button className="py-2 px-4 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
                   REGISTER
                 </button>
