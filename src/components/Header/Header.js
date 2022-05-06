@@ -75,7 +75,6 @@ const Header = () => {
             >
               Perfume House
             </Link>
-            {/* <!-- Left links --> */}
             <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
               <li className="nav-item p-2">
                 <a
@@ -102,13 +101,9 @@ const Header = () => {
                 </a>
               </li>
             </ul>
-            {/* <!-- Left links --> */}
           </div>
-          {/* <!-- Collapsible wrapper --> */}
 
-          {/* <!-- Right elements --> */}
           <div className="flex items-center relative">
-            {/* <!-- Icon --> */}
             <div className="dropdown relative">
               <div>
                 <Link to="/login">
