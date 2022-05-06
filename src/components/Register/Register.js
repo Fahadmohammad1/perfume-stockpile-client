@@ -1,15 +1,6 @@
 import React from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
 
-const Login = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
-  const handleGoogleLogin = () => {
-    signInWithGoogle();
-  };
-  console.log(user);
-  console.log(error);
+const Register = () => {
   return (
     <div className="pb-5">
       <link
@@ -43,7 +34,6 @@ const Login = () => {
                   Github
                 </button>
                 <button
-                  onClick={handleGoogleLogin}
                   className="bg-white active:bg-blueGray-50 text-blueGray-700  px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                   type="button"
                 >
@@ -62,6 +52,19 @@ const Login = () => {
                 <small>Or sign in with credentials</small>
               </div>
               <form className="text-left">
+                <div className="relative w-full mb-3">
+                  <label
+                    className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                    htmlFor="grid-password"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                    placeholder="Name"
+                  />
+                </div>
                 <div className="relative w-full mb-3">
                   <label
                     className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -86,6 +89,19 @@ const Login = () => {
                     type="password"
                     className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Password"
+                  />
+                </div>
+                <div className="relative w-full mb-3">
+                  <label
+                    className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                    htmlFor="grid-password"
+                  >
+                    Confirm Password
+                  </label>
+                  <input
+                    type="password"
+                    className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                    placeholder="Confirm Password"
                   />
                 </div>
                 <div>
@@ -118,4 +134,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

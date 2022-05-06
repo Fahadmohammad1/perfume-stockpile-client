@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apikey,
-  authDomain: process.env.REACT_APP_authDomain,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
+  apiKey: "AIzaSyCT6_M1vb_NbytaOiOgq6RVzku10K_5UhI",
+  authDomain: "perfumes-warhouse.firebaseapp.com",
+  projectId: "perfumes-warhouse",
+  storageBucket: "perfumes-warhouse.appspot.com",
+  messagingSenderId: "93368570063",
+  appId: "1:93368570063:web:8e39e758b9a1f89927e7ba",
 };
 
 // Initialize Firebase
