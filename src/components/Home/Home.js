@@ -1,4 +1,5 @@
 import React from "react";
+import AvailableItems from "../AvailableItems/AvailableItems";
 import Items from "../Items/Items";
 import "./Home.css";
 
@@ -20,6 +21,9 @@ const Home = () => {
             Discover
           </a>
         </div>
+      </div>
+      <div>
+        <AvailableItems></AvailableItems>
       </div>
       <div>
         <Items></Items>
