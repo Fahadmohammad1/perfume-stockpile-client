@@ -11,7 +11,7 @@ const AvailableItems = () => {
   }, []);
   return (
     <div className="md:grid grid-cols-3 gap-y-4">
-      {perfumes.map((perfume) => (
+      {perfumes.slice(0, 6).map((perfume) => (
         <AvailableItem perfume={perfume}></AvailableItem>
       ))}
     </div>
