@@ -10,7 +10,7 @@ const AvailableItems = () => {
       .then((data) => setPerfumes(data));
   }, []);
   return (
-    <div>
+    <div className="md:grid grid-cols-3 gap-y-4">
       {perfumes.map((perfume) => (
         <AvailableItem perfume={perfume}></AvailableItem>
       ))}
