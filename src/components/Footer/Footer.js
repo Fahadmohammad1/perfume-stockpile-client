@@ -14,8 +14,8 @@ const Footer = () => {
             <div className="flex mt-8 space-x-6 text-gray-600 justify-center">
               <a
                 className="hover:opacity-75"
-                href="/"
-                target="_blank"
+                href="www.facebook.com"
+                target="_"
                 rel="noreferrer"
               >
                 <span className="sr-only"> Facebook </span>

@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
+import useItem from "../../Hooks/useItem";
 import AvailableItem from "../AvailableItem/AvailableItem";
 
 const AvailableItems = () => {
-  const [perfumes, setPerfumes] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/perfume")
-      .then((res) => res.json())
-      .then((data) => setPerfumes(data));
-  }, []);
+  const { perfumes } = useItem();
   return (
     <div className="md:grid grid-cols-3 gap-y-4">
       {perfumes.map((perfume) => (
