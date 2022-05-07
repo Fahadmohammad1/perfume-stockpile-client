@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        {/* <Route path="/inventory" element={<Inventory></Inventory>}></Route> */}
+        <Route path="/inventory" element={<Inventory></Inventory>}></Route>
         {/* <Route path="/inventory/:id" element={<Inventory></Inventory>}></Route> */}
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
