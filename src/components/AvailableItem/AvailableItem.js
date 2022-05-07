@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AvailableItem = ({ perfume }) => {
   return (
     <div className="container mx-auto">
-      <div className="card bg-[#15263F] w-80 h-[32rem] rounded-xl p-6 space-y-4 mx-auto ">
+      <div className="card bg-[#15263F] w-80 h-full rounded-xl p-6 space-y-4 mx-auto">
         <div className="">
           <img
             className="w-full h-64 rounded-md  hover:bg-cyan-300 group-hover:scale-110 transition duration-300 ease-in-out"
@@ -51,6 +52,11 @@ const AvailableItem = ({ perfume }) => {
             </span>
           </div>
         </div>
+        <Link to="/">
+          <button className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3">
+            Stock Update
+          </button>
+        </Link>
       </div>
     </div>
   );

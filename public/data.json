@@ -37,7 +37,7 @@
     "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/231745654-813x1220.jpg",
     "supplierName": "Shepard Sims",
     "description": "Jo Malone London is the Promegranate Noir's best perfume ever. It's a warm perfume that feels you richness.",
-    "name": "Jo Malone London Pomegranate Noir Cologne",
+    "name": "Jo Malone London",
     "quantity": 14
   },
   {
@@ -53,8 +53,24 @@
     "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/496-83022651-MFK1022302_M-813x1220.jpg",
     "supplierName": "Osborn Kinney",
     "description": "When you wear this scent you will definately get attention. Beautiful fragnance for Amberwood & Ambergris.",
-    "name": "Maison Francis Kurkdjian Baccarat Rouge 540",
+    "name": "Maison Francis Kurkdjian",
     "quantity": 26
+  },
+  {
+    "price": "$553.45",
+    "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/4627-agent-provocateur-agent-provocateur-eau-de-parfum-spray-100ml-813x1220.jpg",
+    "supplierName": "David Hess",
+    "description": "This scent is not popular as it once was. But it has a wonderful fragnance that you will definately love it.Spacially for feminine.",
+    "name": "Agent Provocateur",
+    "quantity": 38
+  },
+  {
+    "price": "$977.13",
+    "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/philosykos_face_philo100v1_1439x1200_1-813x1220.jpg",
+    "supplierName": "Burris Frost",
+    "description": "In Geek language Philosykos means 'friend off the fig tree'. You won't be able to get enough if you smell it.",
+    "name": "Diptyque Philosykos",
+    "quantity": 36
   },
   {
     "price": "$877.87",
@@ -88,14 +104,7 @@
     "name": "Thierry Mugler Angel",
     "quantity": 29
   },
-  {
-    "price": "$977.13",
-    "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/philosykos_face_philo100v1_1439x1200_1-813x1220.jpg",
-    "supplierName": "Burris Frost",
-    "description": "In Geek language Philosykos means 'friend off the fig tree'. You won't be able to get enough if you smell it.",
-    "name": "Diptyque Philosykos",
-    "quantity": 36
-  },
+
   {
     "price": "$606.85",
     "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/208-77011643-04000010_M-813x1220.jpg",
@@ -105,14 +114,6 @@
     "quantity": 33
   },
 
-  {
-    "price": "$553.45",
-    "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/4627-agent-provocateur-agent-provocateur-eau-de-parfum-spray-100ml-813x1220.jpg",
-    "supplierName": "David Hess",
-    "description": "This scent is not popular as it once was. But it has a wonderful fragnance that you will definately love it.Spacially for feminine.",
-    "name": "Agent Provocateur",
-    "quantity": 38
-  },
   {
     "price": "$615.31",
     "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/1004917-lancome-la-vie-est-belle-eau-de-parfum-spray-30ml-813x1220.jpg",
@@ -126,7 +127,7 @@
     "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/1210451-estee-lauder-bronze-goddess-eau-fraiche-eau-de-toilette-spray-100ml-813x1220.jpg",
     "supplierName": "Beryl Snow",
     "description": "A very useful and good scent for summer. When you are planning to go out in summer you shoul must wear it. It gives you long lasting fragnance.",
-    "name": "Estée Lauder Bronze Goddess",
+    "name": "Estée Lauder Bronze",
     "quantity": 21
   },
   {
@@ -134,7 +135,7 @@
     "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/10366911-2034896385231842-813x1220.jpg",
     "supplierName": "Lynnette Emerson",
     "description": "The perfume is launced in 2006. It's made form the aroma-chemical Iso E super. The scent smell slightly different on each person.",
-    "name": "Escentric Molecules Molecule 01",
+    "name": "Escentric Molecules",
     "quantity": 37
   },
   {
@@ -142,7 +143,7 @@
     "picture": "https://ksassets.timeincuk.net/wp/uploads/sites/46/2022/03/3700135003613-813x1220.jpg",
     "supplierName": "Wong Bishop",
     "description": "Main ingredient of this scent is Tuberose. Tuberose is very effective and powerful smelled flower. That's why it's awesome.",
-    "name": "Frederic Malle Carnal Flower",
+    "name": "Frederic Malle Carnal",
     "quantity": 23
   },
   {
