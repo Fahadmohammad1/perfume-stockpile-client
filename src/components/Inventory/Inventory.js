@@ -9,6 +9,7 @@ const AvailableItem = () => {
 
   const handleNavigate = (id) => {
     navigate(`/inventory/${id}`);
+    console.log(id);
   };
   return (
     <div className="md:grid grid-cols-3 gap-y-4">

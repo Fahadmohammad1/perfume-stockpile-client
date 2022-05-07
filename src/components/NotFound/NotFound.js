@@ -13,7 +13,7 @@ const NotFound = () => {
         <h1 className="text-3xl mt-3 text-left pr-12">Not Found</h1>
         <button
           onClick={() => {
-            navigate("/");
+            navigate("/inventory");
           }}
           className="py-2 px-4 bg-transparent text-gray-400 font-semibold border border-gray-400 rounded hover:bg-black hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-20 mt-3"
         >

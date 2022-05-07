@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Inventory from "./components/Inventory/Inventory";
+import ItemDetails from "./components/ItemDetails/ItemDetails";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
 import Register from "./components/Register/Register";
@@ -17,7 +18,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
-        {/* <Route path="/inventory/:id" element={<Inventory></Inventory>}></Route> */}
+        <Route path="/inventory/:id" element={<ItemDetails />}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
