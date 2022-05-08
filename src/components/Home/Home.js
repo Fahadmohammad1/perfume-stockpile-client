@@ -25,6 +25,7 @@ const Home = () => {
           </a>
         </div>
       </div>
+      <h1 className="text-4xl font-serif text-center my-3">Availabe Items</h1>
       <div className="grid md:grid-cols-3 gap-y-4">
         {perfumes.slice(0, 6).map((perfume) => (
           <div key={perfume._id} className="container mx-auto">
@@ -77,13 +78,23 @@ const Home = () => {
                 onClick={() => {
                   navigate(`/inventory/${perfume._id}`);
                 }}
-                className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
+                className="py-2 px-4 bg-transparent text-white font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
               >
                 Stock Update
               </button>
             </div>
           </div>
         ))}
+      </div>
+      <div className="w-1/4 mx-auto mt-4">
+        <button
+          onClick={() => {
+            navigate("/inventory");
+          }}
+          className="py-2 px-4 bg-transparent text-white font-bold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
+        >
+          Manage Inventory
+        </button>
       </div>
       <div>
         <Items></Items>

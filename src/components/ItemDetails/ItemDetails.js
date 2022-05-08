@@ -15,7 +15,7 @@ const ItemDetails = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [id, perfume]);
 
   const handleDelivered = () => {
     const productQuantity = perfume.quantity;
@@ -78,9 +78,6 @@ const ItemDetails = () => {
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex items-center">
               <div>
-                <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                  BRAND NAME
-                </h2>
                 <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
                   {perfume.name}
                 </h1>
@@ -132,10 +129,7 @@ const ItemDetails = () => {
                 <p className="leading-relaxed">{perfume.description}</p>
                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                   <div className="flex">
-                    <span className="mr-3">Color</span>
-                    <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                    <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                    <button className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                    <span className="mr-3">ID : {perfume._id}</span>
                   </div>
                   <div className="flex ml-6 items-center">
                     <span className="mr-3">Quantity</span>
@@ -156,18 +150,6 @@ const ItemDetails = () => {
                   >
                     delivered
                   </button>
-                  <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                    <svg
-                      fill="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                    </svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -176,7 +158,7 @@ const ItemDetails = () => {
       </div>
       <div>
         <div>
-          <h1 className="text-4xl text-center">Restock the Items</h1>
+          <h1 className="text-4xl font-serif text-center">Restock the Items</h1>
           <form onSubmit={handleRestock} className="m-4 flex justify-center">
             <input
               name="number"

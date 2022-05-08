@@ -79,7 +79,7 @@ const AvailableItem = () => {
               onClick={() => {
                 navigate(`/inventory/${perfume._id}`);
               }}
-              className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
+              className="py-2 px-4 bg-transparent text-white font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
             >
               Stock Update
             </button>
@@ -87,7 +87,7 @@ const AvailableItem = () => {
               onClick={() => {
                 handleDeleteItem(perfume._id);
               }}
-              className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
+              className="py-2 px-4 bg-transparent text-white font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
             >
               Delete
             </button>

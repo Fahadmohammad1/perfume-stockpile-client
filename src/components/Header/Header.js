@@ -64,17 +64,18 @@ const Header = () => {
               className="
         flex
         items-center
-        text-black
-        text-2xl
+        text-[#4F46E5]
+        text-3xl
         font-bold
         mt-2
         lg:mt-0
         mr-1
+        
       "
             >
               Perfume House
             </Link>
-            <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+            <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto ">
               <li className="nav-item p-2">
                 <Link
                   to="/inventory"
@@ -85,20 +86,22 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item p-2">
-                <a
+                <Link
+                  to="/myItems"
                   className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                   href="/"
                 >
-                  Team
-                </a>
+                  My Items
+                </Link>
               </li>
               <li className="nav-item p-2">
-                <a
+                <Link
+                  to="/addItem"
                   className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                   href="/"
                 >
-                  Projects
-                </a>
+                  Add Item
+                </Link>
               </li>
             </ul>
           </div>
@@ -107,12 +110,12 @@ const Header = () => {
             <div className="dropdown relative">
               <div>
                 <Link to="/login">
-                  <button className="py-2 px-4 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
+                  <button className="py-2 px-4 bg-transparent text-black font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
                     LOGIN
                   </button>
                 </Link>
                 <Link to="/register">
-                  <button className="py-2 px-4 bg-transparent text-red-600 font-semibold border border-red-600 rounded hover:bg-red-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
+                  <button className="py-2 px-4 bg-transparent text-black font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
                     REGISTER
                   </button>
                 </Link>
@@ -269,7 +272,6 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          {/* <!-- Right elements --> */}
         </div>
       </nav>
     </div>
