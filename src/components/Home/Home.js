@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useItem from "../../Hooks/useItem";
 import Items from "../Items/Items";
 import "./Home.css";
@@ -9,7 +9,7 @@ const Home = () => {
   const { perfumes } = useItem();
 
   const handleNavigate = (id) => {
-    navigate("/login");
+    navigate(`/inventory/${id}`);
     console.log(id);
   };
   return (
@@ -81,16 +81,14 @@ const Home = () => {
                   </span>
                 </div>
               </div>
-              <Link to="/">
-                <button
-                  onClick={() => {
-                    handleNavigate(perfume._id);
-                  }}
-                  className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
-                >
-                  Stock Update
-                </button>
-              </Link>
+              <button
+                onClick={() => {
+                  handleNavigate(perfume._id);
+                }}
+                className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
+              >
+                Stock Update
+              </button>
             </div>
           </div>
         ))}

@@ -1,15 +1,36 @@
 import React from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Login = () => {
-  const [signInWithGoogle, user, , error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const [user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+  if (loading) {
+    return (
+      <button type="button" className="bg-indigo-500 ..." disabled>
+        <svg
+          className="animate-spin h-5 w-5 mr-3 ..."
+          viewBox="0 0 24 24"
+        ></svg>
+        Please Wait...
+      </button>
+    );
+  }
 
   const handleGoogleLogin = () => {
     signInWithGoogle();
   };
-  console.log(user);
-  console.log(error);
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
   return (
     <div className="pb-5">
       <link
