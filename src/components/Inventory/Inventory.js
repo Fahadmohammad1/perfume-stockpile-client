@@ -3,7 +3,19 @@ import { useNavigate } from "react-router-dom";
 import useItem from "../../Hooks/useItem";
 
 const AvailableItem = () => {
-  const { perfumes } = useItem();
+  const { perfumes, setPerfumes } = useItem();
+
+  const handleDeleteItem = (id) => {
+    const url = `http://localhost:5000/item/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const remaining = perfumes.filter((perfume) => perfume._id === id);
+        setPerfumes(remaining);
+      });
+  };
 
   const navigate = useNavigate();
   return (
@@ -70,6 +82,14 @@ const AvailableItem = () => {
               className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
             >
               Stock Update
+            </button>
+            <button
+              onClick={() => {
+                handleDeleteItem(perfume._id);
+              }}
+              className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
+            >
+              Delete
             </button>
           </div>
         </div>

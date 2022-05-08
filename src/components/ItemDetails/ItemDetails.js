@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 const ItemDetails = () => {
   const { id } = useParams();
   const [perfume, setPerfume] = useState({});
-  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     axios
@@ -18,7 +17,7 @@ const ItemDetails = () => {
       });
   }, []);
 
-  const handleDelivered = (e) => {
+  const handleDelivered = () => {
     const productQuantity = perfume.quantity;
     const newQuantity = productQuantity - 1;
     const updateQuantity = { newQuantity };
@@ -38,9 +37,38 @@ const ItemDetails = () => {
         setPerfume(updateStock);
       });
   };
+
+  const handleRestock = (e) => {
+    e.preventDefault();
+    const previousStock = parseInt(perfume.quantity);
+    const fieldStock = parseInt(e.target.number.value);
+    const newStock = previousStock + fieldStock;
+    const updatedStock = { newStock };
+
+    const url = `http://localhost:5000/perfume/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedStock),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const quantity = updatedStock.newStock;
+        const newQuantity = { ...perfume, quantity };
+        setPerfume(newQuantity);
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="bg-[#F6F6F6]">
-      <section className="text-gray-600 body-font overflow-hidden">
+      <div className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <img
@@ -145,7 +173,23 @@ const ItemDetails = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div>
+        <div>
+          <h1 className="text-4xl text-center">Restock the Items</h1>
+          <form onSubmit={handleRestock} className="m-4 flex justify-center">
+            <input
+              name="number"
+              type="number"
+              className="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white"
+              placeholder="Enter Quantity"
+            />
+            <button className="px-8 rounded-r-lg bg-yellow-400  text-gray-800 font-bold p-4 uppercase border-yellow-500 border-t border-b border-r">
+              Restock
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
