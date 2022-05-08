@@ -67,12 +67,9 @@ const Home = () => {
                 <div className="flex text-sm items-center">
                   <span className="ml-2 text-slate-500">
                     Supplier Name:
-                    <a
-                      href="/"
-                      className="text-gray-300 transition hover:text-cyan-300"
-                    >
+                    <span className="text-gray-300 transition hover:text-cyan-300">
                       {perfume.supplierName}
-                    </a>
+                    </span>
                   </span>
                 </div>
               </div>

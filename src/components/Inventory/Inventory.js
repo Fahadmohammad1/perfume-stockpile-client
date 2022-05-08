@@ -7,7 +7,7 @@ const AvailableItem = () => {
 
   const navigate = useNavigate();
   return (
-    <div className="md:grid grid-cols-3 gap-y-4">
+    <div className="md:grid grid-cols-3 gap-y-4 pb-5">
       {perfumes.map((perfume) => (
         <div key={perfume._id} className="container mx-auto">
           <div className="card bg-[#15263F] w-80 h-full rounded-xl p-6 space-y-4 mx-auto">
@@ -48,13 +48,18 @@ const AvailableItem = () => {
               </div>
               <div className="flex text-sm items-center">
                 <span className="ml-2 text-slate-500">
+                  Product Id:
+                  <span className="text-gray-300 transition hover:text-cyan-300">
+                    {perfume._id}
+                  </span>
+                </span>
+              </div>
+              <div className="flex text-sm items-center">
+                <span className="ml-2 text-slate-500">
                   Supplier Name:
-                  <a
-                    href="/"
-                    className="text-gray-300 transition hover:text-cyan-300"
-                  >
+                  <span className="text-gray-300 transition hover:text-cyan-300 font-bold">
                     {perfume.supplierName}
-                  </a>
+                  </span>
                 </span>
               </div>
             </div>
