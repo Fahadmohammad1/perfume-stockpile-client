@@ -30,7 +30,7 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
-
+  console.log(user);
   return (
     <div className="pb-5">
       <link

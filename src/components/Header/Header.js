@@ -1,5 +1,7 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import "./Header.css";
 
 const Header = () => {
@@ -244,6 +246,9 @@ const Header = () => {
               >
                 <li>
                   <button
+                    onClick={() => {
+                      signOut(auth);
+                    }}
                     className="
         dropdown-item
         text-sm

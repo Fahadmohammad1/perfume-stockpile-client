@@ -7,11 +7,6 @@ import "./Home.css";
 const Home = () => {
   const navigate = useNavigate();
   const { perfumes } = useItem();
-
-  const handleNavigate = (id) => {
-    navigate(`/inventory/${id}`);
-    console.log(id);
-  };
   return (
     <div className="gradient">
       <div className="container mx-auto px-6 md:px-12 relative z-0 flex items-center py-32 xl:py-40">
@@ -83,7 +78,7 @@ const Home = () => {
               </div>
               <button
                 onClick={() => {
-                  handleNavigate(perfume._id);
+                  navigate(`/inventory/${perfume._id}`);
                 }}
                 className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
               >

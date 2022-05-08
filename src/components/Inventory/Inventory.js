@@ -6,11 +6,6 @@ const AvailableItem = () => {
   const { perfumes } = useItem();
 
   const navigate = useNavigate();
-
-  const handleNavigate = (id) => {
-    navigate(`/inventory/${id}`);
-    console.log(id);
-  };
   return (
     <div className="md:grid grid-cols-3 gap-y-4">
       {perfumes.map((perfume) => (
@@ -65,7 +60,7 @@ const AvailableItem = () => {
             </div>
             <button
               onClick={() => {
-                handleNavigate(perfume._id);
+                navigate(`/inventory/${perfume._id}`);
               }}
               className="py-2 px-4 bg-transparent text-white font-semibold border border-yellow-600 rounded hover:bg-yellow-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
             >
