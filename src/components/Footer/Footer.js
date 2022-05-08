@@ -1,12 +1,12 @@
 import React from "react";
-
+import logo from "../../images/logo.jpg";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <img src="#" className="mr-5 h-6 sm:h-9" alt="logo" />
+            <img src={logo} className="mr-5 h-6 sm:h-9" alt="logo" />
             <p className="max-w-xs mt-4 text-sm text-gray-600">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
               accusantium.

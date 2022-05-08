@@ -120,91 +120,6 @@ const Header = () => {
                   </button>
                 </Link>
               </div>
-              <ul
-                className="
-      dropdown-menu
-      min-w-max
-      absolute
-      hidden
-      bg-white
-      text-base
-      z-50
-      float-left
-      py-2
-      list-none
-      text-left
-      rounded-lg
-      shadow-lg
-      mt-1
-      m-0
-      bg-clip-padding
-      border-none
-      left-auto
-      right-0
-    "
-                aria-labelledby="dropdownMenuButton1"
-              >
-                <li>
-                  <a
-                    className="
-          dropdown-item
-          text-sm
-          py-2
-          px-4
-          font-normal
-          block
-          w-full
-          whitespace-nowrap
-          bg-transparent
-          text-gray-700
-          hover:bg-gray-100
-        "
-                    href="/"
-                  >
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="
-          dropdown-item
-          text-sm
-          py-2
-          px-4
-          font-normal
-          block
-          w-full
-          whitespace-nowrap
-          bg-transparent
-          text-gray-700
-          hover:bg-gray-100
-        "
-                    href="/"
-                  >
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="
-          dropdown-item
-          text-sm
-          py-2
-          px-4
-          font-normal
-          block
-          w-full
-          whitespace-nowrap
-          bg-transparent
-          text-gray-700
-          hover:bg-gray-100
-        "
-                    href="/"
-                  >
-                    Something else here
-                  </a>
-                </li>
-              </ul>
             </div>
             <div className="dropdown relative">
               <a
@@ -218,7 +133,7 @@ const Header = () => {
                 <img
                   src="https://mdbootstrap.com/img/new/avatars/2.jpg"
                   className="rounded-full"
-                  style={{ height: "25px", width: "25px" }}
+                  style={{ height: "32px", width: "32px" }}
                   alt=""
                   loading="lazy"
                 />

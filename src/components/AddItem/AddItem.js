@@ -159,7 +159,7 @@ const AddItem = () => {
             >
               I agree with the{" "}
               <a
-                href="#"
+                href="/"
                 class="text-blue-600 hover:underline dark:text-blue-500"
               >
                 terms and conditions
@@ -178,11 +178,7 @@ const AddItem = () => {
         <p class="mt-5">
           These input field components is part of a larger, open-source library
           of Tailwind CSS components. Learn more by going to the official{" "}
-          <a
-            class="text-blue-600 hover:underline"
-            href="https://flowbite.com/docs/getting-started/introduction/"
-            target="_blank"
-          >
+          <a class="text-blue-600 hover:underline" href="/" target="_blank">
             Flowbite Documentation
           </a>
           .
