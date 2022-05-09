@@ -1,7 +1,11 @@
 import React from "react";
 import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import {
+  useSignInWithEmailAndPassword,
+  useSendPasswordResetEmail,
+} from "react-firebase-hooks/auth";
 
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
@@ -10,6 +14,18 @@ const Login = () => {
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
+
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
+
+  const [signInWithEmailAndPassword, emailUser, emailLoading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const handleEmailLogin = (e) => {
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    signInWithEmailAndPassword(email, password);
+  };
 
   if (loading) {
     return (
@@ -82,7 +98,7 @@ const Login = () => {
               <div className="text-blueGray-400 text-center mb-3 font-bold">
                 <small>Or sign in with credentials</small>
               </div>
-              <form className="text-left">
+              <form onSubmit={handleEmailLogin} className="text-left">
                 <div className="relative w-full mb-3">
                   <label
                     className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -91,6 +107,7 @@ const Login = () => {
                     Email
                   </label>
                   <input
+                    name="email"
                     type="email"
                     className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Email"
@@ -104,6 +121,7 @@ const Login = () => {
                     Password
                   </label>
                   <input
+                    name="password"
                     type="password"
                     className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Password"
@@ -124,11 +142,22 @@ const Login = () => {
                 <div className="text-center mt-6">
                   <button
                     className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                    type="button"
+                    type="submit"
                   >
                     {" "}
                     LOGIN{" "}
                   </button>
+                </div>
+                <div className="text-center mt-3">
+                  New Member?{" "}
+                  <Link className="text-blue-800" to="/register">
+                    Please Register
+                  </Link>
+                </div>
+
+                <div className="text-center mt-3">
+                  Forget Password?{" "}
+                  <span className="text-blue-800">Reset Password</span>
                 </div>
               </form>
             </div>

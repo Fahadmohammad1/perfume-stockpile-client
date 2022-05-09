@@ -1,12 +1,19 @@
 import React, { useRef } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Register = () => {
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
-  const [createUserWithEmailAndPassword, user] =
-    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(
+    auth,
+    { sendEmailVerification: true }
+  );
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -19,6 +26,18 @@ const Register = () => {
     createUserWithEmailAndPassword(email, password);
     navigate("/");
   };
+
+  if (loading) {
+    return (
+      <button type="button" className="bg-indigo-500 ..." disabled>
+        <svg
+          className="animate-spin h-5 w-5 mr-3 ..."
+          viewBox="0 0 24 24"
+        ></svg>
+        Please Wait...
+      </button>
+    );
+  }
   console.log(user);
   return (
     <div className="pb-5">

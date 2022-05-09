@@ -1,9 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useItem from "../../Hooks/useItem";
 
 const MyItems = () => {
+  const navigate = useNavigate();
+  const { perfumes, setPerfumes } = useItem();
   const [user, loading] = useAuthState(auth);
   const [products, setProducts] = useState([]);
 
@@ -11,12 +15,25 @@ const MyItems = () => {
     const getProduct = async () => {
       const email = user.email;
       const { data } = await axios.get(
-        `http://localhost:5000/myItems?email=${email}`
+        `https://damp-falls-68111.herokuapp.com/myItems?email=${email}`
       );
       setProducts(data);
     };
     getProduct();
   }, [user]);
+
+  const handleDeleteItem = (id) => {
+    console.log("clicked");
+    const url = `https://damp-falls-68111.herokuapp.com/item/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const remaining = perfumes.filter((perfume) => perfume._id === id);
+        setPerfumes(remaining);
+      });
+  };
 
   if (loading) {
     return <p>loading...</p>;
@@ -84,8 +101,21 @@ const MyItems = () => {
                         {product._id}
                       </td>
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        <button className="py-2 px-4 bg-transparent text-black font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3">
+                        <button
+                          onClick={() => {
+                            handleDeleteItem(product._id);
+                          }}
+                          className="py-2 px-4 bg-transparent text-black font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-1/3 mt-3"
+                        >
                           Delete
+                        </button>
+                        <button
+                          onClick={() => {
+                            navigate("/addItem");
+                          }}
+                          className="py-2 px-4 bg-transparent text-black font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-1/3 mt-3"
+                        >
+                          Add New
                         </button>
                       </td>
                     </tr>

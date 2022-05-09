@@ -22,7 +22,7 @@ const ItemDetails = () => {
     const newQuantity = productQuantity - 1;
     const updateQuantity = { newQuantity };
 
-    const url = `http://localhost:5000/perfume/${id}`;
+    const url = `https://damp-falls-68111.herokuapp.com/perfume/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

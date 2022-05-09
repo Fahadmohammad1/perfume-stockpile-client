@@ -80,7 +80,13 @@ const Header = () => {
             >
               Perfume Stockpile
             </Link>
-            <ul className="navbar-nav flex flex-col pl-0 list-style-none items-center mx-auto ">
+            <ul
+              className={
+                user
+                  ? "navbar-nav flex flex-col pl-0 list-style-none items-center mx-auto "
+                  : "hidden"
+              }
+            >
               <li className="nav-item p-2">
                 <Link
                   to="/inventory"
@@ -106,6 +112,15 @@ const Header = () => {
                   href="/"
                 >
                   Add Item
+                </Link>
+              </li>
+              <li className="nav-item p-2">
+                <Link
+                  to="/blogs"
+                  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                  href="/"
+                >
+                  Blogs
                 </Link>
               </li>
             </ul>
@@ -137,7 +152,7 @@ const Header = () => {
               >
                 <img
                   src={
-                    user
+                    user?.photoURL
                       ? `${user?.photoURL}`
                       : "https://e7.pngegg.com/pngimages/178/595/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png"
                   }

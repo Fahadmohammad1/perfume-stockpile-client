@@ -4,10 +4,25 @@ import useItem from "../../Hooks/useItem";
 import Items from "../Items/Items";
 import "./Home.css";
 import { Carousel } from "3d-react-carousal";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Home = () => {
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   const { perfumes } = useItem();
+
+  if (loading) {
+    return (
+      <button type="button" className="bg-indigo-500 ..." disabled>
+        <svg
+          className="animate-spin h-5 w-5 mr-3 ..."
+          viewBox="0 0 24 24"
+        ></svg>
+        Please Wait...
+      </button>
+    );
+  }
   const slides = [
     <img
       src="https://do84cgvgcm805.cloudfront.net/article/585/1200/e2517ddf9da9da6c759704f24162a0fbbe5145e792fd61ee7278902dfb173338.jpg"

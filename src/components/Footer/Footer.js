@@ -8,8 +8,8 @@ const Footer = () => {
           <div>
             <img src={logo} className="mr-5 h-6 sm:h-9" alt="logo" />
             <p className="max-w-xs mt-4 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-              accusantium.
+              We stock Perfumes from many companies. Our team is always prepare
+              to export and import perfumes.
             </p>
             <div className="flex mt-8 space-x-6 text-gray-600 justify-center">
               <a
@@ -197,7 +197,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <p className="mt-8 text-xs text-gray-800">© 2022 Comany Name</p>
+        <p className="mt-8 text-xs text-gray-800">
+          © 2022 <span className="text-[#4F46E5]">Perfume Stockpile</span>
+        </p>
       </div>
     </footer>
   );

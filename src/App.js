@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AddItem from "./components/AddItem/AddItem";
+import Blog from "./components/Blog/Blog";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -30,6 +31,7 @@ function App() {
           }
         ></Route>
         <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+        <Route path="/blogs" element={<Blog></Blog>}></Route>
         <Route
           path="/inventory/:id"
           element={

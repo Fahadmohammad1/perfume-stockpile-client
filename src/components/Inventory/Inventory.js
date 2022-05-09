@@ -6,7 +6,7 @@ const AvailableItem = () => {
   const { perfumes, setPerfumes } = useItem();
 
   const handleDeleteItem = (id) => {
-    const url = `http://localhost:5000/item/${id}`;
+    const url = `https://damp-falls-68111.herokuapp.com/item/${id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -19,7 +19,7 @@ const AvailableItem = () => {
 
   const navigate = useNavigate();
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-4 my-5">
       {perfumes.map((perfume) => (
         <div key={perfume._id} className="container mx-auto">
           <div className="card bg-[#15263F] w-80 h-full rounded-xl p-6 space-y-4 mx-auto">

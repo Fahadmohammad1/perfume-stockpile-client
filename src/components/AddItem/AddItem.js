@@ -1,6 +1,8 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddItem = () => {
   const handleAddItem = (e) => {
@@ -16,7 +18,7 @@ const AddItem = () => {
     };
     console.log(data);
 
-    fetch(`http://localhost:5000/perfume`, {
+    fetch(`https://damp-falls-68111.herokuapp.com/perfume`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -25,7 +27,11 @@ const AddItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        if (result) {
+          toast("Product Added Succesfully");
+        } else {
+          toast.warn("Failed to Add");
+        }
       });
   };
   const [user, loading] = useAuthState(auth);
@@ -34,6 +40,7 @@ const AddItem = () => {
   }
   return (
     <div>
+      <h1 className="text-center text-3xl font-serif mt-4">Stock product</h1>
       <div className="max-w-2xl mx-auto bg-white p-16">
         <form onSubmit={handleAddItem}>
           <div className="grid gap-6 mb-6 lg:grid-cols-2">
@@ -48,7 +55,7 @@ const AddItem = () => {
                 type="text"
                 id="name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                value={user.displayName}
+                value={user?.displayName}
                 readOnly
                 disabled
                 required
@@ -111,7 +118,7 @@ const AddItem = () => {
               type="email"
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value={user.email}
+              value={user?.email}
               readOnly
               disabled
               required
@@ -173,15 +180,11 @@ const AddItem = () => {
           >
             Submit
           </button>
+          <ToastContainer></ToastContainer>
         </form>
 
-        <p className="mt-5">
-          These input field components is part of a larger, open-source library
-          of Tailwind CSS components. Learn more by going to the official{" "}
-          <a className="text-blue-600 hover:underline" href="/" target="_blank">
-            Flowbite Documentation
-          </a>
-          .
+        <p className="mt-5 text-center">
+          Fill up the form carefully to stock your product.
         </p>
       </div>
     </div>
