@@ -3,7 +3,9 @@ import React from "react";
 const Items = () => {
   return (
     <div className="py-5 container mx-auto">
-      <h1 className="text-2xl font-bold pb-4 font-serif"></h1>
+      <h1 className="text-3xl text-center mt-4 font-bold pb-4 font-serif">
+        Available Soon
+      </h1>
       <div>
         <div className="text-gray-400 bg-gray-900 body-font">
           <div className="container px-5 py-24 mx-auto flex flex-wrap">

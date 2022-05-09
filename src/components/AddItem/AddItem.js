@@ -1,6 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user, loading] = useAuthState(auth);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div>
       <div class="max-w-2xl mx-auto bg-white p-16">
@@ -11,28 +17,13 @@ const AddItem = () => {
                 for="first_name"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                First name
+                Supplier Name
               </label>
               <input
                 type="text"
                 id="first_name"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="John"
-                required
-              />
-            </div>
-            <div>
-              <label
-                for="last_name"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Last name
-              </label>
-              <input
-                type="text"
-                id="last_name"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Doe"
+                placeholder={user.displayName}
                 required
               />
             </div>
@@ -41,13 +32,13 @@ const AddItem = () => {
                 for="company"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Company
+                Product Name
               </label>
               <input
                 type="text"
-                id="company"
+                id="product"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Flowbite"
+                placeholder="Perfume"
                 required
               />
             </div>
@@ -56,14 +47,13 @@ const AddItem = () => {
                 for="phone"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Phone number
+                Quantity
               </label>
               <input
-                type="tel"
-                id="phone"
+                type="number"
+                id="quantity"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="123-45-678"
-                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                placeholder="00"
                 required
               />
             </div>
@@ -72,28 +62,13 @@ const AddItem = () => {
                 for="website"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Website URL
-              </label>
-              <input
-                type="url"
-                id="website"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="flowbite.com"
-                required
-              />
-            </div>
-            <div>
-              <label
-                for="visitors"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-                Unique visitors (per month)
+                Price
               </label>
               <input
                 type="number"
-                id="visitors"
+                id="price"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder=""
+                placeholder="price"
                 required
               />
             </div>
@@ -109,7 +84,9 @@ const AddItem = () => {
               type="email"
               id="email"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="john.doe@company.com"
+              placeholder={user.email}
+              readOnly
+              disabled
               required
             />
           </div>
@@ -118,13 +95,13 @@ const AddItem = () => {
               for="password"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
-              Password
+              Picture URL
             </label>
             <input
-              type="password"
-              id="password"
+              type="url"
+              id="image"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="•••••••••"
+              placeholder="product image"
               required
             />
           </div>
@@ -135,11 +112,10 @@ const AddItem = () => {
             >
               Confirm password
             </label>
-            <input
-              type="password"
-              id="confirm_password"
+            <textarea
+              id="description"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="•••••••••"
+              placeholder="description"
               required
             />
           </div>
@@ -158,12 +134,9 @@ const AddItem = () => {
               class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-400"
             >
               I agree with the{" "}
-              <a
-                href="/"
-                class="text-blue-600 hover:underline dark:text-blue-500"
-              >
+              <span class="text-blue-600 hover:underline dark:text-blue-500">
                 terms and conditions
-              </a>
+              </span>
               .
             </label>
           </div>

@@ -1,10 +1,15 @@
 import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Header.css";
 
 const Header = () => {
+  const [user, loading] = useAuthState(auth);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div className="sticky top-0 z-10">
       <nav
@@ -75,7 +80,7 @@ const Header = () => {
             >
               Perfume House
             </Link>
-            <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto ">
+            <ul className="navbar-nav flex flex-col pl-0 list-style-none items-center mx-auto ">
               <li className="nav-item p-2">
                 <Link
                   to="/inventory"
@@ -108,7 +113,7 @@ const Header = () => {
 
           <div className="flex items-center relative">
             <div className="dropdown relative">
-              <div>
+              <div className={user ? "hidden" : "block"}>
                 <Link to="/login">
                   <button className="py-2 px-4 bg-transparent text-black font-semibold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3">
                     LOGIN
@@ -131,7 +136,11 @@ const Header = () => {
                 aria-expanded="false"
               >
                 <img
-                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                  src={
+                    user
+                      ? `${user?.photoURL}`
+                      : "https://e7.pngegg.com/pngimages/178/595/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png"
+                  }
                   className="rounded-full"
                   style={{ height: "32px", width: "32px" }}
                   alt=""

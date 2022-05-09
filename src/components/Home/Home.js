@@ -3,13 +3,21 @@ import { useNavigate } from "react-router-dom";
 import useItem from "../../Hooks/useItem";
 import Items from "../Items/Items";
 import "./Home.css";
+import { Carousel } from "3d-react-carousal";
 
 const Home = () => {
   const navigate = useNavigate();
   const { perfumes } = useItem();
+  let slides = [
+    <img src="https://picsum.photos/800/300/?random" alt="1" />,
+    <img src="https://picsum.photos/800/301/?random" alt="2" />,
+    <img src="https://picsum.photos/800/302/?random" alt="3" />,
+    <img src="https://picsum.photos/800/303/?random" alt="4" />,
+    <img src="https://picsum.photos/800/304/?random" alt="5" />,
+  ];
   return (
     <div className="gradient">
-      <div className="container mx-auto px-6 md:px-12 relative z-0 flex items-center py-32 xl:py-40">
+      <div className="container mx-auto px-6 md:px-12 relative z-0 lg:flex items-center py-32 xl:py-40">
         <div className="lg:w-3/5 xl:w-2/5 flex flex-col items-start relative z-0 text-left">
           <span className="font-bold uppercase text-yellow-400">Perfumes</span>
           <h1 className="font-bold text-6xl sm:text-7xl text-white leading-tight mt-4">
@@ -24,13 +32,16 @@ const Home = () => {
             Discover
           </a>
         </div>
+        <div className="w-1/2 h-fit">
+          <Carousel slides={slides} autoplay={true} interval={3000} />
+        </div>
       </div>
       <h1 className="text-4xl font-serif text-center my-3">Availabe Items</h1>
-      <div className="grid md:grid-cols-3 gap-y-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-4">
         {perfumes.slice(0, 6).map((perfume) => (
           <div key={perfume._id} className="container mx-auto">
             <div className="card bg-[#15263F] w-80 h-full rounded-xl p-6 space-y-4 mx-auto">
-              <div className="">
+              <div>
                 <img
                   className="w-full h-64 rounded-md  hover:bg-cyan-300 group-hover:scale-110 transition duration-300 ease-in-out"
                   src={perfume.picture}
