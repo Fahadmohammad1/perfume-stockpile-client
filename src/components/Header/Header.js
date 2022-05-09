@@ -78,7 +78,7 @@ const Header = () => {
         
       "
             >
-              Perfume House
+              Perfume Stockpile
             </Link>
             <ul className="navbar-nav flex flex-col pl-0 list-style-none items-center mx-auto ">
               <li className="nav-item p-2">

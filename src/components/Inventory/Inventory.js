@@ -37,7 +37,7 @@ const AvailableItem = () => {
                 </h2>
               </a>
               <p className="text-slate-500 text-sm select-none">
-                {perfume.description.slice(0, 80)}
+                {perfume.description?.slice(0, 80)}
               </p>
               <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
                 <span
@@ -52,7 +52,7 @@ const AvailableItem = () => {
                   >
                     <path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
                   </svg>
-                  {perfume.price}
+                  $ {perfume.price}
                 </span>
                 <span className="text-slate-500 flex justify-between items-center select-none">
                   Quantity: {perfume.quantity}

@@ -8,12 +8,27 @@ import { Carousel } from "3d-react-carousal";
 const Home = () => {
   const navigate = useNavigate();
   const { perfumes } = useItem();
-  let slides = [
-    <img src="https://picsum.photos/800/300/?random" alt="1" />,
-    <img src="https://picsum.photos/800/301/?random" alt="2" />,
-    <img src="https://picsum.photos/800/302/?random" alt="3" />,
-    <img src="https://picsum.photos/800/303/?random" alt="4" />,
-    <img src="https://picsum.photos/800/304/?random" alt="5" />,
+  const slides = [
+    <img
+      src="https://do84cgvgcm805.cloudfront.net/article/585/1200/e2517ddf9da9da6c759704f24162a0fbbe5145e792fd61ee7278902dfb173338.jpg"
+      alt="1"
+    />,
+    <img
+      src="https://do84cgvgcm805.cloudfront.net/article/585/1200/e2517ddf9da9da6c759704f24162a0fbbe5145e792fd61ee7278902dfb173338.jpg"
+      alt="2"
+    />,
+    <img
+      src="https://do84cgvgcm805.cloudfront.net/article/585/1200/e2517ddf9da9da6c759704f24162a0fbbe5145e792fd61ee7278902dfb173338.jpg"
+      alt="3"
+    />,
+    <img
+      src="https://do84cgvgcm805.cloudfront.net/article/585/1200/e2517ddf9da9da6c759704f24162a0fbbe5145e792fd61ee7278902dfb173338.jpg"
+      alt="4"
+    />,
+    <img
+      src="https://do84cgvgcm805.cloudfront.net/article/585/1200/e2517ddf9da9da6c759704f24162a0fbbe5145e792fd61ee7278902dfb173338.jpg"
+      alt="5"
+    />,
   ];
   return (
     <div className="gradient">
@@ -32,7 +47,7 @@ const Home = () => {
             Discover
           </a>
         </div>
-        <div className="w-1/2 h-fit">
+        <div className="lg:w-1/2 h-fit">
           <Carousel slides={slides} autoplay={true} interval={3000} />
         </div>
       </div>
@@ -70,7 +85,7 @@ const Home = () => {
                     >
                       <path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
                     </svg>
-                    {perfume.price}
+                    $ {perfume.price}
                   </span>
                   <span className="text-slate-500 flex justify-between items-center select-none">
                     Quantity: {perfume.quantity}
@@ -100,7 +115,7 @@ const Home = () => {
       <div className="w-1/4 mx-auto mt-4">
         <button
           onClick={() => {
-            navigate("/inventory");
+            navigate("/myItems");
           }}
           className="py-2 px-4 bg-transparent text-white font-bold border border-[#4F46E5] rounded hover:bg-[#4F46E5] hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 mr-3 w-full mt-3"
         >
