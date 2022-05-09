@@ -6,15 +6,18 @@ const AvailableItem = () => {
   const { perfumes, setPerfumes } = useItem();
 
   const handleDeleteItem = (id) => {
-    const url = `https://damp-falls-68111.herokuapp.com/item/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const remaining = perfumes.filter((perfume) => perfume._id === id);
-        setPerfumes(remaining);
-      });
+    const proceed = window.confirm("Are You sure You want to delete?");
+    if (proceed) {
+      const url = `https://damp-falls-68111.herokuapp.com/item/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = perfumes.filter((perfume) => perfume._id === id);
+          setPerfumes(remaining);
+        });
+    }
   };
 
   const navigate = useNavigate();
