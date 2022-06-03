@@ -8,7 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const Home = () => {
-  const [user, loading] = useAuthState(auth);
+  const [, loading] = useAuthState(auth);
   const navigate = useNavigate();
   const { perfumes } = useItem();
 
@@ -47,10 +47,12 @@ const Home = () => {
   ];
   return (
     <div className="gradient">
-      <div className="container mx-auto px-6 md:px-12 relative z-0 lg:flex items-center py-32 xl:py-40">
-        <div className="lg:w-3/5 xl:w-2/5 flex flex-col items-start relative z-0 text-left">
-          <span className="font-bold uppercase text-yellow-400">Perfumes</span>
-          <h1 className="font-bold text-6xl sm:text-7xl text-white leading-tight mt-4">
+      <div className="container mx-auto px-6 lg:px-0 relative z-0 lg:flex items-center py-16 xl:py-24">
+        <div className="lg:w-3/5 xl:w-1/2 flex flex-col items-start relative z-0 text-left">
+          <span className="font-bold uppercase text-yellow-400 pl-1">
+            Perfumes
+          </span>
+          <h1 className="font-bold text-4xl lg:text-6xl sm:text-7xl text-white leading-tight mt-4">
             Let yourself be carried
             <br />
             by nature
@@ -62,7 +64,7 @@ const Home = () => {
             Discover
           </a>
         </div>
-        <div className="lg:w-1/2 h-fit">
+        <div className="w-full h-full mt-5 order-10">
           <Carousel slides={slides} autoplay={true} interval={3000} />
         </div>
       </div>
