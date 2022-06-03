@@ -15,12 +15,13 @@ const ItemDetails = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, [id, perfume]);
+  }, [id]);
 
   const handleDelivered = () => {
     const productQuantity = perfume.quantity;
+
     const newQuantity = productQuantity - 1;
-    const updateQuantity = { newQuantity };
+    console.log(newQuantity);
 
     const url = `http://localhost:5000/perfume/${id}`;
     fetch(url, {
@@ -28,11 +29,11 @@ const ItemDetails = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(updateQuantity),
+      body: JSON.stringify({ newQuantity }),
     })
       .then((res) => res.json())
       .then((data) => {
-        const quantity = updateQuantity.newQuantity;
+        const quantity = newQuantity;
         const updateStock = { ...perfume, quantity };
         setPerfume(updateStock);
       });
@@ -40,10 +41,10 @@ const ItemDetails = () => {
 
   const handleRestock = (e) => {
     e.preventDefault();
-    const previousStock = parseInt(perfume.quantity);
+    const previousStock = perfume.quantity;
     const fieldStock = parseInt(e.target.number.value);
-    const newStock = previousStock + fieldStock;
-    const updatedStock = { newStock };
+    const newQuantity = previousStock + fieldStock;
+    console.log(newQuantity);
 
     const url = `http://localhost:5000/perfume/${id}`;
     fetch(url, {
@@ -51,14 +52,13 @@ const ItemDetails = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(updatedStock),
+      body: JSON.stringify({ newQuantity }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        const quantity = updatedStock.newStock;
-        const newQuantity = { ...perfume, quantity };
-        setPerfume(newQuantity);
+        const quantity = newQuantity;
+        const updatedQuantity = { ...perfume, quantity };
+        setPerfume(updatedQuantity);
         e.target.reset();
       })
       .catch((error) => {

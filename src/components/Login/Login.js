@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -18,7 +18,7 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
 
-  const [signInWithEmailAndPassword, emailUser, emailLoading, error] =
+  const [signInWithEmailAndPassword, , emailLoading, error] =
     useSignInWithEmailAndPassword(auth);
 
   const handleEmailLogin = (e) => {
@@ -27,7 +27,13 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  if (loading) {
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, user]);
+
+  if (loading || emailLoading || sending) {
     return (
       <button type="button" className="bg-indigo-500 ..." disabled>
         <svg
@@ -42,10 +48,6 @@ const Login = () => {
   const handleGoogleLogin = () => {
     signInWithGoogle();
   };
-
-  if (user) {
-    navigate(from, { replace: true });
-  }
 
   return (
     <div className="pb-5">
