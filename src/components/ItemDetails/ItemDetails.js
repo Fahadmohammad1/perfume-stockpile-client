@@ -8,7 +8,7 @@ const ItemDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/perfume/${id}`)
+      .get(`https://damp-falls-68111.herokuapp.com/perfume/${id}`)
       .then((res) => {
         setPerfume(res.data);
       })
@@ -23,7 +23,7 @@ const ItemDetails = () => {
     const newQuantity = productQuantity - 1;
     console.log(newQuantity);
 
-    const url = `http://localhost:5000/perfume/${id}`;
+    const url = `https://damp-falls-68111.herokuapp.com/perfume/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -46,7 +46,7 @@ const ItemDetails = () => {
     const newQuantity = previousStock + fieldStock;
     console.log(newQuantity);
 
-    const url = `http://localhost:5000/perfume/${id}`;
+    const url = `https://damp-falls-68111.herokuapp.com/perfume/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

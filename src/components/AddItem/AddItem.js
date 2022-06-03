@@ -18,7 +18,7 @@ const AddItem = () => {
     };
     console.log(data);
 
-    fetch(`http://localhost:5000/perfume`, {
+    fetch(`https://damp-falls-68111.herokuapp.com/perfume`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
