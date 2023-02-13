@@ -18,7 +18,7 @@ const AddItem = () => {
     };
     console.log(data);
 
-    fetch(`https://damp-falls-68111.herokuapp.com/perfume`, {
+    fetch(`https://perfume-stockpile-server.vercel.app/perfume`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

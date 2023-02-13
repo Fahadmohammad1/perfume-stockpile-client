@@ -15,7 +15,7 @@ const MyItems = () => {
     const getProduct = async () => {
       const email = user.email;
       const { data } = await axios.get(
-        `https://damp-falls-68111.herokuapp.com/myItems?email=${email}`
+        `https://perfume-stockpile-server.vercel.app/myItems?email=${email}`
       );
       setProducts(data);
     };
@@ -24,7 +24,7 @@ const MyItems = () => {
 
   const handleDeleteItem = (id) => {
     console.log("clicked");
-    const url = `https://damp-falls-68111.herokuapp.com/item/${id}`;
+    const url = `https://perfume-stockpile-server.vercel.app/item/${id}`;
     fetch(url, {
       method: "DELETE",
     })

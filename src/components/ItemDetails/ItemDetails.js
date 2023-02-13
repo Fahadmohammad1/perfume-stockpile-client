@@ -8,7 +8,7 @@ const ItemDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://damp-falls-68111.herokuapp.com/perfume/${id}`)
+      .get(`https://perfume-stockpile-server.vercel.app/perfume/${id}`)
       .then((res) => {
         setPerfume(res.data);
       })
@@ -23,7 +23,7 @@ const ItemDetails = () => {
     const newQuantity = productQuantity - 1;
     console.log(newQuantity);
 
-    const url = `https://damp-falls-68111.herokuapp.com/perfume/${id}`;
+    const url = `https://perfume-stockpile-server.vercel.app/perfume/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -46,7 +46,7 @@ const ItemDetails = () => {
     const newQuantity = previousStock + fieldStock;
     console.log(newQuantity);
 
-    const url = `https://damp-falls-68111.herokuapp.com/perfume/${id}`;
+    const url = `https://perfume-stockpile-server.vercel.app/perfume/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

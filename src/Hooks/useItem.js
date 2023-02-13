@@ -4,7 +4,7 @@ const useItem = () => {
   const [perfumes, setPerfumes] = useState([]);
 
   useEffect(() => {
-    fetch("https://damp-falls-68111.herokuapp.com/perfume")
+    fetch("https://perfume-stockpile-server.vercel.app/perfume")
       .then((res) => res.json())
       .then((data) => setPerfumes(data));
   }, []);
